@@ -1,0 +1,17 @@
+#Playbook to automate EC2 instance creation
+- hosts: localhost
+
+  tasks: 
+   
+    - name: Provision an EC2 Instance
+      ec2:
+        key_name: MyEc2KeyPair
+        region: us-east-1
+        instance_type: t2.micro
+        image: ami-b70554c8
+        wait: yes
+        group: MyWebDMZ
+        count: 1
+        monitoring: no
+        vpc_subnet_id: subnet-0d822f23
+        assign_public_ip: yes

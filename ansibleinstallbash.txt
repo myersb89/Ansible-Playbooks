@@ -1,5 +1,13 @@
 #!/bin/bash
+
+#AWS boot script to install ansible and copy down playbooks from github repo
+
+#install pip, ansible, boto
 yum update -y
 easy_install pip
 pip install ansible
 pip install boto
+
+#clone my playbooks
+yum install git
+git clone https://github.com/myersb89/Ansible-Playbooks
