@@ -1,0 +1,5 @@
+#!/bin/bash
+yum update -y
+easy_install pip
+pip install ansible
+pip install boto
